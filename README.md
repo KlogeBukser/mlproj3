@@ -1,6 +1,6 @@
 # About
 This repository contains the source code, the dataset and report to FYS-STK4155 project 3.
-For this project we discussed different methods for classification using the [red wine quality data](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009?resource=download) from Kaggle. These data can also be found in the under the *Dataset* folder.
+For this project we discussed different methods for classification using the [red wine quality data](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009?resource=download) from Kaggle. This dataset can also be found in the under the *Dataset* folder.
 
 # Prerequisite
 Check you have PyTorch installed by running:
