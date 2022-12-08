@@ -2,7 +2,7 @@
 This repository contains the source code, the dataset and report to FYS-STK4155 project 3.
 For this project we discussed different methods for classification using the [red wine quality data](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009?resource=download) from Kaggle. These data can also be found in the under the *Dataset* folder.
 
-## Prerequisite
+# Prerequisite
 Check you have PyTorch installed by running:
 ```sh
 python3 -c "import torch"
@@ -19,7 +19,7 @@ Check you have *make* installed by running:
 make --version
 ```
 
-## Execution
+# Execution
 We've used makefile for selected runs. They are structured so that
 - run all functions
 ```sh
@@ -31,7 +31,7 @@ make nn
 ```
 - run with neural networks from PyTorch (both dense neural network and convoluted neural network)
 `sh
-make pnn
+make torch
 `
 
 - run with basic decision trees
@@ -43,5 +43,3 @@ make tree
 `sh
 make forest
 `
-
-
