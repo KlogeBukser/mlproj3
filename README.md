@@ -24,22 +24,22 @@ We've used makefile for selected runs. They are structured so that
 - run all functions
 ```sh
 make all
-```
+```git
 - run with neural network from project 2
 ```sh
 make nn
 ```
 - run with neural networks from PyTorch (both dense neural network and convoluted neural network)
-`sh
+```sh
 make torch
-`
+```
 
 - run with basic decision trees
-`sh
+```sh
 make tree
-`
+```
 
 - run with random forest
-`sh
+```sh
 make forest
-`
+```
