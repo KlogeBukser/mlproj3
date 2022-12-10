@@ -1,2 +1,2 @@
 # ffnn.py
-from nn import *
+from NN.nn import *
