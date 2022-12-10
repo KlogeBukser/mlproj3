@@ -1,3 +1,0 @@
-# forest.py
-
-print("forest")
