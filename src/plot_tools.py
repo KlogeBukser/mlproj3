@@ -1,6 +1,7 @@
 # plot_tools.py
 import os
 import matplotlib.pyplot as plt
+import seaborn as sb
 
 def set_paras(x_title,y_title,title=None,filename=None,file_dir='plots',has_label=False):
 
@@ -51,3 +52,13 @@ def plot_2D(x, y, plot_count=1,title=None,x_title=None,y_title=None,label=False,
 
 
     set_paras(x_title, y_title, title, filename, file_dir, label)
+
+
+def correlation(x):
+    return
+
+def confusion(y_test, y_pred):
+    return
+
+def show_data():
+    return
