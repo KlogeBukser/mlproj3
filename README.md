@@ -24,7 +24,8 @@ We've used makefile for selected runs. They are structured so that
 - run all functions
 ```sh
 make all
-```git
+```
+
 - run with neural network from project 2
 ```sh
 make nn
