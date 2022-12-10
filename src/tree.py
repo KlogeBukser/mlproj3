@@ -12,7 +12,7 @@ def gini(p):
 x_train, x_test, y_train, y_test = read_wine_data()
 tree_clf = DecisionTreeClassifier(max_depth=7, random_state=42)
 
-tree_clf.fit(x_test, y_test)
+tree_clf.fit(x_train, y_train)
 y_pred = tree_clf.predict(x_test)
 
 print(accuracy_score(y_pred, y_test))
