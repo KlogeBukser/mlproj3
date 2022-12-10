@@ -61,15 +61,8 @@ def accuracy_score(y,y_pred):
             I += 1
     return I/n
 
+def softmax(x):
+    return
 
-def logMSE(y,y_pred):
-    return np.log(MSE(y,y_pred))
-
-
-def default_func(params):
-    """ This is a basic function that can be reassigned if some condition holds true """
-    return params
-
-def log10_default_func(params):
-    """ Override function for default_func """
-    return np.log10(params)
+def softmax_grad(x):
+    return
