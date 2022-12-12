@@ -1,7 +1,7 @@
 # plot_tools.py
 import os
 import matplotlib.pyplot as plt
-import seaborn as sb
+import seaborn as sns
 
 def set_paras(x_title,y_title,title=None,filename=None,file_dir='plots',has_label=False):
 
@@ -11,7 +11,7 @@ def set_paras(x_title,y_title,title=None,filename=None,file_dir='plots',has_labe
     plt.xlabel(x_title)
     plt.ylabel(y_title)
     plt.title(title)
-
+    plt.tight_layout()
     if filename:
         full_path = os.path.join(file_dir, filename)
         plt.savefig(full_path)
@@ -53,9 +53,16 @@ def plot_2D(x, y, plot_count=1,title=None,x_title=None,y_title=None,label=False,
 
     set_paras(x_title, y_title, title, filename, file_dir, label)
 
+def save_fig(fname):
+    plt.savefig("plots/"+fname)
+    plt.close()
 
-def correlation(x):
-    return
+def correlation(corr, title=None,x_title=None,y_title=None,label=False,filename=None,
+        file_dir='plots'):
+        
+    make_dir(file_dir)
+    sns.heatmap(corr)
+    set_paras(x_title, y_title, title, filename, file_dir, label)
 
 def confusion(y_test, y_pred):
     return

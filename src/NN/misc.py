@@ -62,7 +62,11 @@ def accuracy_score(y,y_pred):
     return I/n
 
 def softmax(x):
-    return
+    exponential = np.exp(x)
+    return exponential / np.sum(exponential)
 
-def softmax_grad(x):
-    return
+def softmax_grad(x,i,j):
+    sm = softmax(x)
+    if i == j:
+        return sm*(1-sm)
+    return -sm**2

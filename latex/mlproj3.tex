@@ -56,9 +56,17 @@
 % ===========================================
 \section{Results}\label{sec:results}
 %
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\linewidth]{../plots/tree-accVSdepth.pdf}
+	\caption{Mean accuracy score plotted against random forests with 500 trees for the given maximum depth. }
+	\label{fig:accVSdepth}
+\end{figure}
+
 % ===========================================
 \section{Discussion}\label{sec:discussion}
 %
+In order to find the optimal depth for a decision tree, we ran for depth from $ 5 $ to $ 45 $ for step size of 5 first and the result is presented in Figure~\ref{fig:accVSdepth}. We discovered that after the rapid ascend initially, the best performance was reached around maximum depth of $ 20 $. We repeat the tuning process for depth $ \in [15, 25] $, with $ 1000 $ trees per forests. 
 
 % ===========================================
 \section{Conclusion}\label{sec:conclusion}
