@@ -22,7 +22,6 @@ def run_tree(max_depth=False):
     return tree_clf, tree_clf.score(x_test, y_test)
 
 def run_forest(max_depth, max_run):
-    best_tree = None
     best_acc = 0
     scores = []
     for _ in range(max_run):
