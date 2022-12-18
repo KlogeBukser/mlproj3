@@ -27,28 +27,38 @@ make install
 
 # Execution
 We've used makefile for selected runs. They are structured so that
-- run all functions
+
+- tune all models and compare
 ```sh
 make all
 ```
 
-- run with linear models (OLS, Ridge, Lasso)
+- tune linear models
 ```sh
-make lin_rgn $(show_tuning)
+make lin_rgn 
 ```
 
 
-- run with neural network
+- tune neural network parameters
 ```sh
 make nn
 ```
 
-- run with basic decision trees
+- tune decision tree max depth
 ```sh
 make tree
 ```
 
-- run with random forest
+- produces comparison results
 ```sh
-make forest
+make main $(max_run)
 ```
+this takes one input, max_run, is the number of times each model is run. In the report 100 is used, but this takes a few minutes. Defualt 10.
+
+- to delete the plots
+```sh
+make clean
+```
+
+# Results
+All the plots are saved in the **plots** folder.

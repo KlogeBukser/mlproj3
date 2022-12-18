@@ -85,7 +85,7 @@ def save_fig(fname):
 	plt.savefig("plots/"+fname)
 	plt.close()
 
-def heatmap(matrix, xticklabels, yticklabels, x_title="Predicted",y_title="Test", annot=False, title=None, label=False,filename=None,
+def heatmap(matrix, xticklabels='', yticklabels='', x_title="Predicted",y_title="Test", annot=False, title=None, label=False,filename=None,
 		file_dir='plots'):
 		
 	make_dir(file_dir)

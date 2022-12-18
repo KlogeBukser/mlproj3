@@ -1,14 +1,18 @@
-all: main 
+all: data lin_rgn nn tree main
 
-max_depth := 10
 
+max_run:= 10
+main:
+	python3 src/main.py $(max_run)
+
+data:
+	python3 src/read_data.py
 lin_rgn:
 	python3 src/lin_rgn.py
-tree-clf:
-	python3 src/tree.py $(max_depth)
-
+tree:
+	python3 src/tree.py
 nn:
-	python3 src/ffnn.py
+	python3 src/nn.py
 
 install:
 	pip3 install numpy
