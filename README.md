@@ -41,8 +41,9 @@ make lin_rgn
 
 - tune neural network parameters
 ```sh
-make nn
+make nn $(max_iter)
 ```
+this takes 1 argument, max_iter. It determines the maximum number of iterations during tuning. Default 300.
 
 - tune decision tree max depth
 ```sh
@@ -53,7 +54,7 @@ make tree
 ```sh
 make main $(max_run)
 ```
-this takes one input, max_run, is the number of times each model is run. In the report 100 is used, but this takes a few minutes. Defualt 10.
+this takes one input, max_run, is the number of times each model is run. In the report 100 is used, but this takes around 10 minutes to run. Defualt 10.
 
 - to delete the plots
 ```sh

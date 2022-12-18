@@ -53,8 +53,8 @@ The source code, data, and/or other artifacts have been made available at \url{h
 
 % ===========================================
 \section{Introduction}
-The ultimate goal for machine learning is to analyse data, if only there were one almighty algorithm that perfectly fits all the curves and predicts the result. In reality, however, the best machine learning algorithms is often subject to the specific dataset. \\
-This project surrounds the \textit{Wine Quality Data} \cite{CORTEZ2009547} that is both avaiable from Kaggel \cite{learning_2017} and UCL Machine Learning Repository~\cite{uci2009}, with the goal being to identify the quality of the wine using its physiochemical properties. By doing so we compare the performance of different machine learning methods and identify the best parameters (specific to the data). The methods employed here are Linear Regression, Feed Forward Neural Network (FFNN) and Decision Trees, all from the \textit{scikit-learn} library. The thoery of the used machine learning methods are first presented, with those appeared in project 1 or 2 omiited. In Section~\ref{sec:results}, a visual reprensentation of the dataset is presented, followed by the data analysis results from machine learning, then a discussion of the results in Section~\ref{sec:discussion}, before conluding the finding in Section~\ref{sec:conclusion}.
+The ultimate goal for machine learning is to analyse data, if only there were one almighty algorithm that perfectly fits all the curves and predicts the result. In reality, however, the best machine learning algorithms is often subject to the specific dataset. It thus become an essential and interesting topic to identify the best method for a particular dataset.\\
+This project surrounds the \textit{Wine Quality Data} \cite{CORTEZ2009547} that is both available from Kaggel \cite{learning_2017} and UCL Machine Learning Repository~\cite{uci2009}, with the goal being to identify the quality of the wine using its physiochemical properties. By doing so we compare the performance of different machine learning methods and identify the best parameters (specific to the data). The methods employed here are Linear Regression, Feed Forward Neural Network (FFNN) and Decision Trees, all from the \textit{scikit-learn} library. The theory of the used machine learning methods are first presented, with those appeared in project 1 or 2 omitted. In Section~\ref{sec:results}, a visual representation of the dataset is presented, followed by the data analysis results from machine learning, then a discussion of the results in Section~\ref{sec:discussion}, before concluding the finding in Section~\ref{sec:conclusion}.
 
 %
 
@@ -64,7 +64,7 @@ This project surrounds the \textit{Wine Quality Data} \cite{CORTEZ2009547} that 
 As mentioned in the introduction, methods used in project 1 and 2 are not repeatedly discussed. 
 
 \subsection{Decision Tree}
-A tree contains a root node, the interior nodes, and the final leaf nodes, while the connections between nodes are called branches. First, a decision tree tries to split its values into, mostly 2, but sometimes more, subbranches using the CART algorithm in our case. Then the above mentioned step is repeated at each subnode and the tree grows recursively until the given depth or until there is no more impurity in the subset. In general, without regularisation, decision trees are prone to overfitting and have high variance.
+A tree contains a root node, the interior nodes, and the final leaf nodes, while the connections between nodes are called branches. First, a decision tree tries to split its values into, mostly 2, but sometimes more, subbranches using the CART algorithm in our case. Then the above mentioned step is repeated at each sub-node and the tree grows recursively until the given depth or until there is no more impurity in the subset. In general, without regularisation, decision trees are prone to overfitting and have high variance.
 
 \subsection{The CART algorithm}\label{sub:cart}
 CART stands for Classification And Regression Tree. In the case of classification, the Gini factor $ G $ was use determine the impurity. The cost function we are trying to minimise is:
@@ -80,7 +80,7 @@ with
 \[ \overline{y}_{\mathrm{node}}=\frac{1}{m_\mathrm{node}}\sum_{i\in \mathrm{node}}y_i. \] \cite{hjorth-jensen}
 
 \subsection{Random Forest}
-Random forest is an extention from bagging, which is an ensemble method that splits the training data into smaller subsets and build decision tree on each subset. It in general reduces variance. \\ Random forest utilises both bagging and feature randomness to create an uncorrelated forest of decision trees. For a regression task, the individual decision trees will be averaged, and for a classification task, a majority vote—i.e. the most frequent categorical variable—will yield the predicted class. \cite{ibm}. 
+Random forest is an extension from bagging, which is an ensemble method that splits the training data into smaller subsets and build decision tree on each subset. It in general reduces variance. \\ Random forest utilises both bagging and feature randomness to create an uncorrelated forest of decision trees. For a regression task, the individual decision trees will be averaged, and for a classification task, a majority vote—i.e. the most frequent categorical variable—will yield the predicted class. \cite{ibm}. 
 At each split, we choose $ m $ predictors from $ p $ predictors, typically with
 \[ m\approx \sqrt{p}. \] 
 
@@ -102,14 +102,14 @@ We will grow of forest of say $B$ trees.
 % ===========================================
 \section{Results}\label{sec:results}
 %
-The data was split into training and testing data using 8:2 ratio. If the result is plotted against multiple runs, the same training and testing data is used unless otherwise specificed. \\
-In some results from regression models, the predicted values are rounded to the nearest integer to discretise them. Since \textbf{Quality} (i.e. what's being predicted) is a discreted variable, we can calculate the accuracy scores and graph a confusion matrix as we would a classification problem. 
+The data was split into training and testing data using 8:2 ratio. If the result is plotted against multiple runs, the same training and testing data is used unless otherwise specified. \\
+In some results from regression models, the predicted values are rounded to the nearest integer to discretise them. Since \textbf{Quality} (i.e. what's being predicted) is a discrete variable, we can calculate the accuracy scores and graph a confusion matrix as we would a classification problem. 
 \subsection{Dataset}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{data-visualisation.pdf}
-	\caption{Histograms of Featuers of the dataset.}
+	\caption{Histograms of Features of the dataset.}
 	\label{fig:datavis}
 \end{figure}
 
@@ -126,14 +126,14 @@ In some results from regression models, the predicted values are rounded to the 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{lin_rgn-hyperparams.pdf}
-	\caption{L1 (Lasso) and L2 (Ridge) hyperparams tunning results, the hyperparameters $ \lambda \in [10^{-4}, 1]$ for 1000 logerithmically spaced points.}
+	\caption{L1 (Lasso) and L2 (Ridge) hyperparameters tuning results, the hyperparameters $ \lambda \in [10^{-4}, 1]$ for 1000 logarithmically spaced points.}
 	\label{fig:lintune}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{lin_rgn-ols-cm.pdf}
-	\caption{OLS result from }
+	\caption{Confusion matrix of OLS predictions.}
 	\label{fig:olscm}
 \end{figure}
 
@@ -165,14 +165,14 @@ In some results from regression models, the predicted values are rounded to the 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{tree-rgn-scoresVSdepth[1,20].pdf}
-	\caption{Tuning results for decision tree regressor. Mean scores for 1000 runs are ploted against maximum depth $ \in [1,20] $  with steps of $ 2 $  of the tree. }
+	\caption{Tuning results for decision tree regressor. Mean scores for 1000 runs are plotted against maximum depth $ \in [1,20] $  with steps of $ 2 $  of the tree. }
 	\label{fig:tree-rgn-tune}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{../plots/tree-clf-scoresVSdepth[1,45].pdf}
-	\caption{Tuning results for decision tree classifier. Mean scores for 1000 runs are ploted against maximum depth $ \in [1,41] $ with steps of $ 5 $  of the tree.}
+	\caption{Tuning results for decision tree classifier. Mean scores for 1000 runs are plotted against maximum depth $ \in [1,41] $ with steps of $ 5 $  of the tree.}
 	\label{fig:tree-clf-tune}
 \end{figure}
 
@@ -210,29 +210,29 @@ In some results from regression models, the predicted values are rounded to the 
 %
 
 \subsection{the data}
-It is a good practice to first look at the dataset before attempting to solve any problem. The histogram in Figure~\ref{fig:datavis} indicates that a lot of the features are normally distributed, rather than uniformlly distributed (i.e. the data is not balanced). This might cause our machine learning algorithms to favour the prediction of an "average wine" to a "great wine" or a "horrible wine". The correlation matrix in Figure~\ref{fig:featcorr} shows no surprising correlation, except the obvious ones such as "citric acid" and "total acidity" or "free sulfur dioxide" and "total sulfer dioxide". Thus all the featuers are included in training.
+It is a good practice to first look at the dataset before attempting to solve any problem. The histogram in Figure~\ref{fig:datavis} indicates that a lot of the features are normally distributed, rather than uniformly distributed (i.e. the data is not balanced). This might cause our machine learning algorithms to favour the prediction of an "average wine" to a "great wine" or a "horrible wine". The correlation matrix in Figure~\ref{fig:featcorr} shows no surprising correlation, except the obvious ones such as "citric acid" and "total acidity" or "free sulfur dioxide" and "total sulfur dioxide". Thus all the features are included in training.
 
 
-Considering the nature of the problem, this is clearly a regression problem. Even though the values are discrete, there is a clear ordering in term of the quality, as in, a `7` is better thna a `6` which is in turn better than a `5`. This is indeed what we started off doing. However, becasuse of the way the dataset is presented -- the value we are trying to predict, \textit{Quality}, is a discrete variable. It is tempting to treat this is a classification problem. We employed both a classifer and a regressor when using Decision Tree found some interesting results.
+Considering the nature of the problem, this is clearly a regression problem. Even though the values are discrete, there is a clear ordering in term of the quality, as in, a `7` is better than a `6` which is in turn better than a `5`. This is indeed what we started off doing. However, because of the way the dataset is presented -- the value we are trying to predict, \textit{Quality}, is a discrete variable. It is tempting to treat this is a classification problem. We employed both a classifier and a regressor when using Decision Tree found some interesting results.
 
 
 \subsection{Parameters}
-For linear regression methods, it is again the $ L_1 $ and $ L_2 $ regularisation parameters that need to be tuned. Acording to Figure~\ref{fig:lintune} Ordinary Least Square performed the best. This does not come as a suprise the regularisation parameters help preventing overfitting and reduce influences from outlier but our data does not contain many outliers, but has rather a low variance.  \\
-For FFNN, which learning rate update method we use seemed to have no influence at all on the performance of the model, the best activation functions are the $ \tanh $and the \textit{logistic} (Sigmoid) function. From Figure~\ref{fig:nn-hidden}, the best size of the FFNN is $ 1 $ layer with $ 100 $ nodes in the layer. This also happened to be the default values. It also seems like that in general models with fewer layers performed better. \\
+For linear regression methods, it is again the $ L_1 $ and $ L_2 $ regularisation parameters that need to be tuned. According to Figure~\ref{fig:lintune} Ordinary Least Square performed the best. This does not come as a surprise the regularisation parameters help preventing overfitting and reduce influences from outlier but our data does not contain many outliers, but has rather a low variance.  \\
+For FFNN, which learning rate update method we use seemed to have tiny influence on the performance of the model, with constant update being the best. The best activation functions are the $ \tanh $and the \textit{logistic} (Sigmoid) function. From Figure~\ref{fig:nn-hidden}, the best size of the FFNN is $ 1 $ layer with $ 100 $ nodes in the layer. This also happened to be the default values. It also seems like that in general models with fewer layers performed better. \\
 Figure~\ref{fig:tree-rgn-tune} and Figure~\ref{fig:tree-clf-tune} was created in order to determine what is the best maximum depth for a decision tree. All three scores were included in order to do compare between the two. The best max depth which minimises MSE is however not the parameter that maximises accuracy. Ultimately I've chosen accuracy over MSE. We discovered that the accuracy initially increased rapidly with max depth, then rounded of around $ 15 $ and decided max depth of $ 15 $ is the best depth to use. This depth is also used for all the random forest result produced.
 
 
 \subsection{Regression or Classification?}
-The random forestresults produced using max depth $ =15 $ (Figure~\ref{fig:forest-rgncm} and
-Figure~\ref{fig:forest-clfcm}) are very similar and they have similar accuracies as seen on Figure~\ref{fig:forest-clfcm}. Counterintuitively, the classifier perform as well as the regressor. This perhaps indicates at the heart of decision trees (and indeedneural networks and many others), there is really not that big of a different between a regression and classification problem. In the case of a decision tree, both uses the CART algorithm mentioned in Section~\ref{sub:cart}. The only difference is whether square loss was used as cretirion or gini index. 
+The random forest results produced using max depth $ =15 $ (Figure~\ref{fig:forest-rgncm} and
+Figure~\ref{fig:forest-clfcm}) are very similar and they have similar accuracy as seen on Figure~\ref{fig:forest-clfcm}. Counter-intuitively, the classifier perform as well as the regressor. This perhaps indicates at the heart of decision trees (and indeed neural networks and many others), there is really not that big of a different between a regression and classification problem. In the case of a decision tree, both uses the CART algorithm mentioned in Section~\ref{sub:cart}. The only difference is whether square loss or Gini index was used as the loss function. 
 
 
 \subsection{Comparisons}
-The best performaning linear model is OLS, which 
-Figure~\ref{fig:final-cmp} shows that random forests perform much better than FFNN which performs similar the lienar models. The former consistently produced results with accuracies ranging from $ 65\% $ to $ 75\% $, while the latter produced results with accuracies ranging from $ 53\% $ to $ 68\% $. Intersting like, the decision trees with max depth of $ 15 $ doesn't seem to be overfitting, this might again be caused by the dataset being very centered (dispropotional number of 5's and 6's ).
+The best performing linear model is OLS, which 
+Figure~\ref{fig:final-cmp} shows that random forests perform much better than FFNN which performs similar the linear models. The former consistently produced results with accuracies ranging from $ 65\% $ to $ 75\% $, while the latter produced results with accuracies ranging from $ 53\% $ to $ 68\% $. Interestingly, the decision trees with max depth of $ 15 $ doesn't seem to be overfitting, this might again be caused by the dataset being very centered (disproportional number of 5's and 6's ).
 
 \subsection{Link to Other Researches}
-The researchers who published paper on the dataset originally, (Cortez et al.) used Mean Absolute Deviation, i.e. Mean absolute error, (MAE) instead of Mean Square Error (MSE), which is perhaps a better metric than accuracy which we have used here since it takes into account how far away the predictions are when it's inaccurate. As metioned earlier, the dataset is unbalanced and would not perform well in identifing the outliers natrually. Looking at Figure~\ref{fig:nn-rgn-cm} and indeed Figure~\ref{fig:forest-rgncm} and \ref{fig:forest-clfcm}, we see that all the results are in the center of the heatmap, indicating that our model is not ``very off`` when the result isn't correct. This information is missing from Accuracy but indeed captured and quatified by MAE. \\
+The researchers who published paper on the dataset originally, (Cortez et al.) used Mean Absolute Deviation, i.e. Mean absolute error, (MAE) instead of Mean Square Error (MSE), which is perhaps a better metric than accuracy which we have used here since it takes into account how far away the predictions are when it's inaccurate. As mentioned earlier, the dataset is unbalanced and would not perform well in identifying the outliers naturally. Looking at Figure~\ref{fig:nn-rgn-cm} and indeed Figure~\ref{fig:forest-rgncm} and \ref{fig:forest-clfcm}, we see that all the results are in the center of the heatmap, indicating that our model is not ``very off`` when the result isn't correct. This information is missing from Accuracy but indeed captured and quantified by MAE. \\
 
 They have also used sensitive analysis for NN in which the every iteration removes the least sensitive neurons, which outperformed back propagation and genetic algorithms. \\
 
@@ -240,11 +240,11 @@ Cortez et al. concluded that Support Vector Machine is the best method to analys
 % ===========================================
 \section{Conclusion}\label{sec:conclusion}
 After exploring different parameters and methods. We found that, specific to this dataset, a random forest approach performs the best with maximum of depth of $ 15 $.It has accuracy score between $ 65\% $ to $ 75\% $. This performance is better than best result of $ 57.7\% $ to $ 67.5\% $ produced by Cortez et al. using Support Vector Machine with tolerance $ =0.5 $. \cite{CORTEZ2009547} FFNN has similar performance to linear regression models, but takes much longer to run. They produced accuracies between $57.7\%$ to $67.5\%$. \\
-The performance of all methods are clearly correlated to how the data is split. We have also discovered that we could get similar results by treating the wine quality problem as a classification problem, however counterintuitive it is. The models have a common problem that is they favour perdicting average values than more extreme values. This is inherent from the unbalanced nature of the dataset. This, however, might be the reason why the decision trees methods are overfitting the data, as they are very centered with few outliers.
+The performance of all methods are clearly correlated to how the data is split. We have also discovered that we could get similar results by treating the wine quality problem as a classification problem, however counter intuitive it is. The models have a common problem that is they favour predicting average values than more extreme values. This is inherent from the unbalanced nature of the dataset. This, however, might be the reason why the decision trees methods are overfitting the data, as they are very centered with few outliers.
 
 
 \subsection{Further Evaluation}\label{sec:evaluation}
-Independent analysis using Support Vector Machines could be the next step. It is not included in this project as we didn't read the paper by Cortez et al. \cite{CORTEZ2009547} until we finished most of the analysis. Outlier detection algorithms could also be explored on this dataset due to its unbalance. One could also treat this at a classification problem by simply using quality $ \ge 7 $ to be a `good wine` and otherwise a `bad wine` \cite{learning_2017}. Finally one could test different cost functions (MSE, MAE, accuracy) and see which one better evaluates the models. Quantatative time performance of different methods can also be intersting topic for further exploration.
+Independent analysis using Support Vector Machines could be the next step. It is not included in this project as we didn't read the paper by Cortez et al. \cite{CORTEZ2009547} until we finished most of the analysis. Outlier detection algorithms could also be explored on this dataset due to its unbalance. One could also treat this at a classification problem by simply using quality $ \ge 7 $ to be a `good wine` and otherwise a `bad wine` \cite{learning_2017}. Finally one could test different cost functions (MSE, MAE, accuracy) and see which one better evaluates the models. Quantitative time performance of different methods can also be interesting topic for further exploration.
 
 \section{Appendix: Non-essential plots}
 \begin{figure}[ht]
@@ -255,12 +255,6 @@ Independent analysis using Support Vector Machines could be the next step. It is
 	\label{fig:ridge-lasso-cm}
 \end{figure}
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=\linewidth]{lin-nn-cmp.pdf}
-	\caption{Comparison of all the methods, OLS, Ridge, Lasso, FFNN. Accuracy ploted against runs, for 100 runs, each run resamples training and testing data.}
-	\label{fig:lin-nn-compared}
-\end{figure}
 
 \onecolumngrid
 

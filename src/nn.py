@@ -65,8 +65,11 @@ if __name__ == "__main__":
     from read_data import read_wine_data
     import sys
     X_train, X_test, y_train, y_test = read_wine_data()
-    # max_iter = sys.argv[1]
-    # method_tuning(X_train, X_test, y_train, y_test, max_iter)
+    if len(sys.argv) > 1:
+        max_iter = sys.argv[1]
+    else:
+        max_iter = 300
+    method_tuning(X_train, X_test, y_train, y_test, max_iter)
     hidden_size_tuning(X_train, X_test, y_train, y_test)
     
 

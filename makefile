@@ -1,7 +1,7 @@
 all: data lin_rgn nn tree main
 
 
-max_run:= 10
+max_run:= 100
 main:
 	python3 src/main.py $(max_run)
 
@@ -12,7 +12,7 @@ lin_rgn:
 tree:
 	python3 src/tree.py
 nn:
-	python3 src/nn.py
+	python3 src/nn.py $(max_iter)
 
 install:
 	pip3 install numpy
