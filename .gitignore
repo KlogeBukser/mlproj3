@@ -352,3 +352,5 @@ MigrationBackup/
 Dataset/tomato-apple/
 
 .DS_Store
+
+plots/*.pdf
